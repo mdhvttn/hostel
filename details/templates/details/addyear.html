@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block title %}
+<title>Add Year</title>
+
+{% endblock %}
+
+
+{% block content %}
+
+    <center>
+    <form action="/addyear" method="POST">
+        {% csrf_token %}
+        {{ form | crispy}}
+        <br><br>
+        <button type="submit">Add</button>
+    </form>
+  </center>
+{% endblock %}

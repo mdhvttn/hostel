@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+<title>Hostel</title>
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+    </div>
+    <div class="col-sm-6">
+      <center>
+        <div class="container-fluid">
+            {% for year in allyear %}
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h3 class="card-title">{{ year }} year</h3>
+                  <p class="card-text">Click   below to edit in {{year}} year</p>
+                  <a href="{% url 'studentlist' year %}" class="card-link">Get List of Student</a>
+                </div>
+              </div>
+              <hr>
+            {% endfor %}
+        </center>
+    </div>
+    <div class="col-sm-3">
+    </div>
+  </div>
+</div>
+    
+{% endblock %}

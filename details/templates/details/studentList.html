@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+<title>{{ year }}st year list</title>
+{% endblock %}
+
+
+
+{% block content %}
+
+    {% for i in info %}
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          
+        </div>
+        <div class="col-sm-6">
+          <center>
+            <div class="card">
+              <div class="card-header">
+                <h3>Name : {{i.name}}</h3>
+                <h5>Id : {{i.id}}</h5>
+              </div>
+              <div class="card-body">
+                <h4 class="card-title">Course : {{i.course}} &nbsp &nbsp Year : {{year}}st</h4>
+                <p class="card-text">Address : {{i.address}} &nbsp &nbspPhone Number : {{i.phone}}</p>
+                <p class="card-text">Fee submitted : {{i.payment}}</p>
+                <a href="{% url 'editstudent' i.year i.id %}" class="card-link">Edit</a>
+                &nbsp &nbsp
+                <a href="{% url 'deletestudent' i.year i.id %}" class="card-link">Delete</a>
+                <hr>
+              </div>
+            </div>
+          
+          </center>
+        </div>
+        <div class="col-sm-3">
+         
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+    
+    {% endfor %}
+
+{% endblock %}
